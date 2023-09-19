@@ -1,0 +1,319 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-..."
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Kaushik Dolui</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img
+            src="https://code.google.com/images/developers.png"
+            alt="Logo"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+          />
+          <span style="color: #59c378">Kaushik.dev</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#homepage">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">ABOUT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#skill">SKILL</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#work">WORK</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">CONTACT</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div id="homepage" class="homepage">
+      <div class="container">
+        <div class="row">
+          <div
+            class="col-md-6 d-flex flex-column justify-content-center align-items-center"  data-aos="fade-right" data-aos-duration="2000">
+            <h3 class="text-center" style="color: #c3ee26">
+              SOFTWARE DEVELOPER
+            </h3>
+            <h1 class="text-center">
+              HEY!
+              <span class="emoji wave" role="img" aria-label="hand wave"></span>
+            </h1>
+            <h2 class="text-center">
+              I AM <span id="text" style="color: #59c378">KAUSHIK DOLUI</span>
+            </h2>
+            <p class="text-center">
+              Am an Indian-based Software Developer passionate and experienced
+              in building web applications.
+            </p>
+              
+          </div>
+          <div class="col-md-6 d-flex"  data-aos="fade-left" data-aos-duration="2000">
+            <img
+              src="{% static 'images/homepage.png' %}"
+              alt="Your Image"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+
+    <section id="about" class="container about" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 d-flex">
+              <img
+                src="{% static 'images/about.png' %}"
+                alt="Your Image"
+                class="img-fluid"
+              />
+            </div>
+            <div class="col-md-6 d-flex flex-column mt-5">
+              <h3>ABOUT ME</h3>
+              <br />
+              <h2 style="color: #fff">WHY HIRE ME FOR YOUR NEXT PROJECT?</h2>
+              <p style="color: #fff">
+                I'm a 20-year-old creative <b>SOFTWARE DEVELOPER</b> based in
+                <b>BENGALURU, KARNATAKA, INDIA</b> specializing in
+                <b>WEB DEVELOPMENT</b>. I build clean, appealing, and functional
+                interfaces that comply with the latest web standards.
+              </p>
+              <p style="color: #fff">
+                I'm a <b>PYTHON WEB DEVELOPER</b> passionate about Open Source
+              </p>
+              <a
+                href="{% static 'resume/resume.pdf' %}"
+                download="resume.pdf"
+                class="btn btn-success"
+              >
+                DOWNLOAD RESUME <i class="fa fa-download" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    <br />
+    <br />
+    <section id="skill" class="container skills mt-5 mb-5">
+        <div
+          class="mb-5 d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+        >
+          <h5>MY SKILL PROGRESS SO FAR</h5>
+          <h3 style="color: #fff">MY SKILLS</h3>
+        </div>
+      <div class="grey-bg container-fluid">
+        <div class="row">
+          {% for skill in skills %}
+          <!-- card start -->
+          <div class="col-xl-3 col-sm-6 col-12 mb-4" data-aos="fade-up">
+            <div class="skill card skill-card">
+              <div class="card-content">
+                <div class="card-body">
+                  <div class="media d-flex">
+                    <div class="media-body text-left">
+                      <h3 class="success">{{ skill.title }}</h3>
+                      <span style="color: #fff">{{ skill.level }}</span>
+                    </div>
+                    <div class="align-self-center">
+                      <img
+                      src="{{skill.image.url}}"
+                        height="60"
+                        width="60"
+                        alt="{{ skill.title }}"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- card end -->
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <section id="work" class="container work mt-5 mb-5">
+        <div class="mb-5 d-flex flex-column justify-content-center align-items-center" data-aos="fade-up">
+          <h5>CHECK OUT MY PROJECTS</h5>
+          <h3 style="color: #fff">MY WORK</h3>
+        </div>
+        <div class="grey-bg container-fluid">
+          <div class="row">
+            {% for project in projects %}
+            <!-- card start -->
+            <div class="col-xl-3 col-sm-6 col-12 mb-4" data-aos="fade-up">
+              <div class="skill card skill-card"> <!-- Set a fixed height here -->
+                <div class="card-content">
+                  <div class="card-body">
+                    <div class="media d-flex">
+                      <div class="align-self-center text-center">
+                        <img
+                          src="{{project.image.url}}"
+                          height="150"
+                          width="250"
+                          alt="{{ project.title }}"
+                          class="mx-auto d-block"
+                        />
+                        <br>
+                        <p class="success">{{ project.title }}</p>
+                        <span style="color: #fff">{{ project.languages }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- card end -->
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+      
+      
+ 
+    <section id="contact" class="container contact mt-5">
+        <div
+        class="mb-5 d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+      >
+      <h5>I WANT TO HEAR FROM YOU</h5>
+      <h1 style="color: #fff">CONTACT ME</h1>
+    </div>
+        <div class="grey-bg container-fluid">
+          <div class="row">
+            <!-- Contact Info on the Left -->
+            <div class="col-xl-3 col-sm-6 col-12 mb-4" data-aos="fade-up">
+              <div class="skill card skill-card">
+                <div class="card-content">
+                  <div class="card-body">
+                    <div class="media d-flex">
+                      <div class="media-body text-left">
+                        <ul class="contact-ul">
+                          <li><i class="fa fa-location-dot"></i>&nbsp;Bengaluru, Karnataka, India</li>
+                          <li>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:kaushikdolui4@gmail.com"><b>&nbsp;kaushikdolui4@gmail.com</b></a>
+                          </li>
+                        </ul>
+                        <div class="social-icons">
+                          <a href="https://instagram.com/ii_.panda._ii?igshid=OGQ5ZDc2ODk2ZA==" target="_blank">
+                            <img
+                              src="{% static 'images/instagram.ico' %}"
+                              height="30"
+                              width="30"
+                              alt="Instagram"
+                            />
+                          </a>
+                          <a href="https://www.linkedin.com/in/kaushik-dolui-780208225/" target="_blank">
+                            <img
+                              src="{% static 'images/linkedin.png' %}"
+                              height="30"
+                              width="30"
+                              alt="LinkedIn"
+                            />
+                          </a>
+                          <a href="https://github.com/Imkaushikdolui" target="_blank">
+                            <img
+                              src="{% static 'images/github.png' %}"
+                              height="30"
+                              width="30"
+                              alt="GitHub"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Contact Form on the Right -->
+      <div class="col-xl-9 col-sm-6 col-12 mb-4" data-aos="fade-up">
+        <div class="col-md-8"> <!-- Increased form size -->
+            <form action="{% url 'send_contact_email' %}" class="contFrm" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-sm-6">
+                      <input type="text" name="name" placeholder="Your Name" class="inptFld" required />
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="email" name="email" placeholder="Email Address" class="inptFld" required />
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="tel" name="phone" placeholder="Phone Number" class="inptFld" required />
+                    </div>
+                    <div class="col-sm-6">
+                      <input type="text" name="subject" placeholder="Subject" class="inptFld" required />
+                    </div>
+                    <div class="col-12">
+                      <textarea class="inptFld" name="message" rows="6" placeholder="Your Message..." required></textarea>
+                    </div>
+                    <div class="col-12">
+                      <input type="submit" name="submit" value="SUBMIT" class="inptBtn" />
+                    </div>
+                  </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      
+      
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      // Initialize AOS
+      AOS.init();
+    </script>
+    <!-- Link to external JavaScript -->
+  </body>
+</html>

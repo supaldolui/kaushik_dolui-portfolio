@@ -1,0 +1,54 @@
+/* Contents of your CSS styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: #222;
+    padding-bottom: 50px;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Add some padding to the container */
+  }
+  
+  .nav {
+    position: fixed;
+    background-color: #0d012c;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000; /* Ensure the navbar appears on top of other content */
+  }
+  
+  /* Rest of your CSS styles */
+  
+  /* Mobile Responsiveness */
+  @media screen and (max-width: 768px) {
+    /* Media queries for mobile styles */
+    .nav .container {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px;
+    }
+  
+    .nav ul {
+      margin-top: 20px;
+      justify-content: flex-start;
+    }
+  
+    .nav a {
+      margin-right: 10px;
+    }
+  
+    .nav.active {
+      box-shadow: none;
+    }
+  }
+  
