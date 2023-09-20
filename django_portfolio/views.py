@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from portfolio.models import *
 from django.conf import settings
 from django.core.mail import send_mail
@@ -36,7 +36,7 @@ def send_contact_email(request):
 
         # Compose and send the email (your existing code)
 
-        return render(request, 'base.html')
+        return redirect('index')
     else:
         print("something went wrong")
         return HttpResponse("Invalid request method.")
