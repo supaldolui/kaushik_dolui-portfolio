@@ -140,11 +140,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Define the base directory for media file uploads
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-# Define the URL prefix for media files
-MEDIA_URL = '/media/'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
